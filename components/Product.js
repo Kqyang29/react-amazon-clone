@@ -59,7 +59,7 @@ function Product({ id, title, price, description, category, image }) {
 
       <button
         onClick={addItemToBasket}
-        className='p-2  w-full rounded-md bg-gradient-to-t from-yellow-500 to-yellow-300 hover:bg-gradient-to-b hover:from-yellow-300 to-to-yellow-500'>
+        className='p-2  w-full rounded-md bg-gradient-to-t from-yellow-300 to-yellow-500 active:from-yellow-200'>
         Add to Basket
       </button>
     </div>
