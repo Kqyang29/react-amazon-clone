@@ -7,13 +7,17 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
+    "@stripe/react-stripe-js": "^1.16.1",
+    "@stripe/stripe-js": "^1.46.0",
+    "axios": "^1.2.2",
     "firebase": "^9.15.0",
     "next": "latest",
     "next-auth": "^4.18.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "stripe": "^11.5.0"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",

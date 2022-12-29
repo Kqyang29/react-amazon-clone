@@ -5,11 +5,31 @@ import { useSelector } from 'react-redux';
 import CheckoutProduct from '../components/CheckoutProduct';
 import Header from '../components/Header'
 import { selectItems, selectTotal } from '../slice/basketSlice';
+import { loadStripe } from '@stripe/stripe-js';
+import axios from 'axios';
 
+
+const stripePromise = loadStripe(process.env.stripe_public_key);
 function Checkout() {
   const { data: session } = useSession();
   const products = useSelector(selectItems);
   const total = useSelector(selectTotal);
+
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    // call backend to create checkout session
+    const checkoutSession = await axios.post("api/create_checkout_session", {
+      items: products,
+      email: session.user.email
+    });
+
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) alert(result.error.message);
+  };
   return (
     <div className="bg-gray-100">
       <Header />
@@ -56,7 +76,11 @@ function Checkout() {
           </h2>
 
           <div className='px-5 pb-2'>
-            <button className={`button mt-2 w-full ${!session && `from-gray-300 to-gray-500 cursor-not-allowed border-gray-300`}`}>
+            <button
+              role="link"
+              onClick={createCheckoutSession}
+              disabled={!session}
+              className={`button mt-2 w-full ${!session && `from-gray-300 to-gray-500 cursor-not-allowed border-gray-300`}`}>
               {session ? "Sign in to Checkout" : "Click to CheckOut"}
             </button>
           </div>

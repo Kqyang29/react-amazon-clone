@@ -23,14 +23,15 @@ function Product({ id, title, price, description, category, image }) {
     dispatch(addToBasket(product));
   }
   return (
-    <div className='flex flex-col items-start justify-between relative bg-white m-2 p-10 z-30 space-y-2'>
-      <p className='absolute top-2 right-2 text-gray-400'>{category}
+    <div className='flex flex-col items-start relative bg-white m-2 p-5 z-30 space-y-5'>
+      <p className='absolute top-2 right-2 text-gray-400'>
+        {category}
       </p>
 
       <img
         src={image}
         alt=""
-        className='w-full h-40 object-contain'
+        className=' h-40 object-contain w-full'
       />
 
       <h1>{title}</h1>
@@ -42,12 +43,12 @@ function Product({ id, title, price, description, category, image }) {
         ))}
       </div>
 
-      <div >
-        <p>${price}</p>
+      <div className='flex-grow'>
+        <p >${price}</p>
       </div>
 
       {hasPrime && (
-        <div className='flex items-center space-x-1 '>
+        <div className='flex items-center space-x-1'>
           <img
             src="https://links.papareact.com/fdw"
             alt="has_prime"
@@ -56,6 +57,8 @@ function Product({ id, title, price, description, category, image }) {
           <p className='text-xs text-gray-500'>Free Next-day Delivery</p>
         </div>
       )}
+
+
 
       <button
         onClick={addItemToBasket}
