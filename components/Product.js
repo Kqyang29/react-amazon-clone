@@ -1,8 +1,8 @@
-import { StarIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 import { useState } from 'react';
 import Currency from 'react-currency-formatter';
 import { useDispatch } from 'react-redux';
+import { StarIcon } from '../icons';
 import { addToBasket } from '../slice/basketSlice';
 
 const MAX_RATING = 5;
