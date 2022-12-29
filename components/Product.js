@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import Currency from 'react-currency-formatter';
 import { useDispatch } from 'react-redux';
 import { StarIcon } from '../icons';
 import { addToBasket } from '../slice/basketSlice';
@@ -44,10 +43,7 @@ function Product({ id, title, price, description, category, image }) {
       </div>
 
       <div >
-        < Currency
-          quantity={price}
-          currency="USD"
-        />
+        <p>${price}</p>
       </div>
 
       {hasPrime && (
