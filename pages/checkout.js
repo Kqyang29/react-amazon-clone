@@ -5,6 +5,10 @@ function Checkout() {
   return (
     <div>
       <Header />
+
+      <main>
+        sssssss
+      </main>
     </div>
   )
 }
