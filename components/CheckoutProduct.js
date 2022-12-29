@@ -22,14 +22,14 @@ function CheckoutProduct({ id, title, price, description, category, image, ratin
       <Image
         src={image}
         alt="checkoutProduct_img"
-        width={200}
-        height={200}
+        width={250}
+        height={250}
         style={{ objectFit: "contain" }}
-
+        className="my-auto"
       />
 
-      <div className='col-span-3 m-5 space-y-5'>
-        <p className='text-xl'>{title}</p>
+      <div className='col-span-3 m-5 space-y-2'>
+        <p className='text-lg'>{title}</p>
 
         <div className='flex my-2'>
           {Array(rating).fill().map((_, i) => (

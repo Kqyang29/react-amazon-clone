@@ -17,13 +17,14 @@ function Checkout() {
       <main className='lg:flex max-w-screen-2xl mx-auto'>
         {/* left */}
         <div className='m-5'>
-          <div className='shadow-sm bg-white'>
+          <div className='shadow-sm bg-white '>
             <Image
               src="https://links.papareact.com/ikj"
               alt="checkout_image"
               width={1020}
               height={250}
               style={{ objectFit: "contain" }}
+
             />
           </div>
 
