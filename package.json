@@ -6,7 +6,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.13",
     "@reduxjs/toolkit": "^1.9.1",
     "firebase": "^9.15.0",
     "next": "latest",

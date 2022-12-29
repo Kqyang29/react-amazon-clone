@@ -1,14 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import {
-  MagnifyingGlassIcon,
-  Bars3Icon,
-  ShoppingCartIcon,
-} from "@heroicons/react/24/outline";
 import { useSelector } from 'react-redux';
 import { selectItems } from '../slice/basketSlice';
 import { useRouter } from 'next/router';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { MenuIcon, Search, ShoppingCart } from '../icons';
 
 function Header() {
   const { data: session, status } = useSession();
@@ -39,7 +35,7 @@ function Header() {
             placeholder='search'
             className='rounded-l-md  outline-none w-full px-4 py-2'
           />
-          <MagnifyingGlassIcon className='h-12 p-3 text-white cursor-pointer' />
+          <Search className='h-12 p-3 text-white cursor-pointer' />
         </div>
 
         {/* right */}
@@ -61,7 +57,7 @@ function Header() {
             <span className='absolute top-0 bg-yellow-400 rounded-full h-4 w-4 text-center '>
               {products.length}
             </span>
-            <ShoppingCartIcon className='h-10' />
+            <ShoppingCart className='h-10' />
             <p className='hidden md:inline mt-2 font-semibold '>Basket</p>
           </div>
         </div>
@@ -70,7 +66,7 @@ function Header() {
       {/* bottom */}
       <div className='flex items-center bg-amazon_blue-light text-white p-2 space-x-2'>
         <p className="link ml-5 flex items-center">
-          <Bars3Icon className='h-6 mr-1 cursor-pointer' />
+          <MenuIcon className='h-6 mr-1 cursor-pointer' />
           All
         </p>
         <p className="link">Prime Video</p>
