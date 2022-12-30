@@ -1,6 +1,5 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-
 const firebaseConfig = {
   apiKey: "AIzaSyBjHy0u9SmML140uXQUCLv944Mpm498J5g",
   authDomain: "linkedin-clone-3dccb.firebaseapp.com",
@@ -14,6 +13,5 @@ const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
 
-export const db = app.firestore();
-
+const db = app.firestore();
 export default db;

@@ -81,7 +81,7 @@ function Checkout() {
               onClick={createCheckoutSession}
               disabled={!session}
               className={`button mt-2 w-full ${!session && `from-gray-300 to-gray-500 cursor-not-allowed border-gray-300`}`}>
-              {session ? "Sign in to Checkout" : "Click to CheckOut"}
+              {!session ? "Sign in to Checkout" : "Click to CheckOut"}
             </button>
           </div>
         </div>
